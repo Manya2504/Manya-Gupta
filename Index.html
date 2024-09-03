@@ -1,96 +1,71 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="responsive.css" />
-    <title>VK STORE</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <h1>VK STORE</h1>
-          <input type="text" placeholder="Search" />
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="container">
-      <!-- Slideshow container -->
-<div class="slideshow-container">
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img class= "sliderimg" src="./slider/iphone.jpg" style="width:100%">
-    <div class="text">IPHONE</div>
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img class= "sliderimg" src="./slider/laptop2.jpg" style="width:100%">
-    <div class="text">LAPTOP</div>
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img class= "sliderimg" src="./slider/gaming.jpg" style="width:100%">
-    <div class="text">GAMING</div>
-  </div>
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-      <div class="firstcard">
-        <h2> SPORTS ITEMS </h2>
-    <div class="card-items">
-      <img src="./items//sports/sport1.jpg" alt="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Killer Pizza from Mars</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Killer Pizza from Mars</h1>
+        </header>
+
+        <section id="menu-section">
+            <h2>Menu</h2>
+            <table id="menu-table">
+                <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Items</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody id="menu-body">
+                    <!-- Menu items will be loaded here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="order-section">
+            <h2>Place Your Order</h2>
+            <form id="order-form">
+                <label for="customer-name">Name of Customer:</label>
+                <input type="text" id="customer-name" required><br><br>
+
+                <label for="item-slno">Enter Item Slno:</label>
+                <input type="text" id="item-slno" required><br><br>
+
+                <label for="quantity">Enter Quantity:</label>
+                <input type="number" id="quantity" value="1" min="0"><br><br>
+
+                <button type="button" onclick="addItem()">Add Item</button>
+                <button type="button" onclick="generateInvoice()">Generate Invoice</button>
+            </form>
+
+            <div id="invoice-section" style="display: none;">
+                <h2>Invoice</h2>
+                <div id="invoice-details"></div>
+                <table id="invoice-table">
+                    <thead>
+                        <tr>
+                            <th>Slno</th>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price of 1 Unit</th>
+                            <th>Price of n Units</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoice-body">
+                        <!-- Invoice items will be loaded here -->
+                    </tbody>
+                </table>
+                <div id="invoice-summary"></div>
+            </div>
+        </section>
     </div>
-    <div class="card-items">
-      <img src="./items/sports/sport2.jpg" alt="">
-    </div>
-    <div class="card-items">
-      <img src="./items/sports/sport3.jpg" alt="">
-    </div>
-    <div class="card-items">
-      <img src="./items/sports/sport4.jpg" alt="">
-    </div>
-    <div class="card-items">
-      <img src="./items/sports/sport5.jpg" alt="">
-    </div>
-  </div>
-</div>
-    </div>
-      </div>
-      <div class="container">
-        <div class="firstcard">
-          <h2> MOBILE PHONES </h2>
-      <div class="card-items">
-        <img src="./items/mobile/mobile1.png" alt="">
-      </div>
-      <div class="card-items">
-        <img src="./items/mobile/mobile2.jpg" alt="">
-      </div>
-      <div class="card-items">
-        <img src="./items/mobile/mobile3.jpg" alt="">
-      </div>
-      <div class="card-items">
-        <img src="./items/mobile/mobile4.jpg" alt="">
-      </div>
-      <div class="card-items">
-        <img src="./items/mobile/mobile5.jpg" alt="">
-      </div>
-    </div>
-  </div>
-      </div>
-      
-        </div>
-    </main>
-    <footer>
-      <p>Copyright &#169; 2023-2024</p>
-    </footer>
-  </body>
-  <script>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
